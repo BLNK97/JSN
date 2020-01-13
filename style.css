@@ -1,0 +1,592 @@
+//*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Catch-all
+3.0 - Elements
+	3.1 - Header
+	3.2 - Navigation Menu
+	3.3 - General / Index
+	3.4 - About Page
+	3.5 - Gallery
+	3.6 - Video
+	3.7 - Footer
+4.0 - Alignments
+5.0 - Clearings
+6.0 - Media
+7.0 - Selection
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 - Reset
+--------------------------------------------------------------*/
+* { 
+margin:0; padding:0; 
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+*,
+*:before,
+*:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+	-webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
+	-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
+	box-sizing:         border-box;
+}
+body {
+	background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:hover,
+a:active,
+a:focus {
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+/*--------------------------------------------------------------
+2.0 Catch-all
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #000;
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+p {
+	margin-bottom: 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+th {
+	font-weight: bold;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+3.0 Layout Elements
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+3.1 Header
+--------------------------------------------------------------*/
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(255,255,255,0.93);
+	border: 0;
+	height: 204px;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	z-index: 1;
+}
+.drop-shadow {
+	position: fixed;
+	top: 204px;
+	bottom: 0;
+	right: 0;
+	background: url(./images/shadow.png) no-repeat center top;
+	height: auto;
+	width: 100%;
+	z-index: -1;
+}
+#header-logo {
+	margin: 39px auto 0 auto;
+}
+
+/*--------------------------------------------------------------
+3.2 Navigation Menus
+--------------------------------------------------------------*/
+.main-nav {
+	clear: both;
+	display: block;
+	margin: 25px auto 0 auto;
+	width: 360px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+.main-nav ul,
+.s-links ul,
+.s-twaw-chs ul,
+.s-menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.main-nav li {
+	float: left;
+	position: relative;
+}
+.main-nav a {
+	display: block;
+	width: 180px;
+	height: 60px;
+	padding-top: 5px;
+	color: #000;
+	text-decoration: none;
+}
+.main-nav ul ul {
+	display: none;
+	float: left;
+	left: 0;
+	position: absolute;
+	top: 1.5em;
+	z-index: 99999;
+}
+.main-nav ul ul a {
+	width: 180px;
+	height: 45px;
+	padding: 13px 2px;
+	margin-bottom: 1px;
+	color: #fff;
+	background-color: #70da7e;
+}
+.main-nav ul ul li {
+}
+.main-nav li.nav-about:hover > a,
+#about .main-nav li.nav-about a {
+	border-bottom: 10px solid #ea5151;
+}
+#work .main-nav li.nav-work a {
+	border-bottom: 10px solid #70da7e;
+}
+#work .main-nav ul ul :hover > a {
+	border: 0;
+}
+.main-nav li.nav-contact:hover > a {
+	border-bottom: 10px solid #ef9e5a;
+}
+.main-nav ul ul :hover > a {
+	background-color: #70da7e;
+}
+.main-nav ul ul a:hover {
+}
+.main-nav ul li:hover > ul {
+	display: block;
+	width: 180px;
+	margin-top: 29px;
+}
+.main-nav .current_page_item a,
+.main-nav .current-menu-item a {
+}
+.page-nav {
+	max-width: 540px;
+	margin: 45px auto;
+	position: relative;
+}
+.arrow-left {
+	width: 18px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	clear: both;
+}
+.arrow-right {
+	width: 18px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	clear: both;
+}
+.page-numbers {
+	max-width: 600px;
+	text-align: center;
+	margin: 0 auto;
+}
+.page-numbers a {
+	text-align: center;
+	padding: 6px 12px;
+}
+.page-numbers a:hover,
+.page-numbers a.active {
+	background-color: #f1f1f1;
+	-moz-border-radius: 50% 50%;
+	border-radius: 50% 50%;
+}
+.page-nav a img,
+.page-numbers a {
+	opacity: .5;
+}
+.page-nav .none {
+	opacity: .1;
+}
+.page-nav a:hover img,
+.page-numbers a:hover,
+.page-numbers a.active {
+	opacity: 1;
+}
+@media screen and (max-width: 540px) {
+.main-nav {
+	width: 480px;
+}
+.main-nav a,
+.main-nav ul ul a,
+.main-nav ul li:hover > ul {
+	width: 120px;
+}
+}
+/*--------------------------------------------------------------
+3.3 General / Index
+--------------------------------------------------------------*/
+#content {
+	margin: 204px auto 30px auto;
+}
+#work #content {
+	max-width: 1500px;
+}
+#home footer,
+.s-twaw-index footer {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+3.4 About Page
+--------------------------------------------------------------*/
+h1 {
+	font-family: "Open Sans Condensed", sans-serif;
+	font-size: 60px;
+	font-size: 6.0rem;
+	text-transform: uppercase;
+	line-height: 1.2;
+	margin: 0 0 12px 0;
+	text-align: right;
+	float: left;
+	width: 210px;
+	padding-right: 4px;
+}
+h2 {
+	font-family: "Open Sans Condensed", sans-serif;
+	font-size: 45px;
+	font-size: 4.5rem;
+	text-transform: uppercase;
+	line-height: 1.1;
+	margin: 0 0 12px 0;
+	text-align: center;
+}
+.about {
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 100px 0 80px 0;
+	line-height: 1.8;
+}
+.about p {
+	margin-bottom: 18px;
+	text-align: center;
+}
+.about-talk {
+	float: left;
+	width: 471px;
+	margin: 10px 0 0 39px;
+	
+}
+	.about-talk a {
+		background-color: #f1f1f1;
+		padding: 1px 4px;
+	}
+	.about-talk a:hover {
+		background-color: #ea5151;
+	}
+.about-talk p {
+	text-align: justify;
+}
+.about-icons {
+	text-align: center;
+	margin-top: 30px;
+}
+.about-icons img {
+	margin: 0 3px;
+}
+.about-icons img:hover {
+	opacity: .6;
+}
+.about-bg {
+	width: 100%;
+	height: 450px;
+	background: url(./images/bg_scroll_001.png) no-repeat center center fixed;
+	background-size: cover;
+}
+.about-bg-overlay {
+	width: 100%;
+	height: 100%;
+	background: url(./js/vegas/overlays/02.png) repeat top center fixed;
+	opacity: .9;
+}
+@media screen and (max-width: 1024px) {
+.about-bg-overlay {
+	display: none;
+}
+}
+@media screen and (max-width: 540px) {
+h1 {
+	float: none;
+	text-align: center;
+	width: 480px;
+	margin: 0 auto 12px auto;
+	padding-right: 0;
+}
+.about-talk {
+	float: none;
+	width: 480px;
+	margin: 10px auto 0 auto;
+}
+}
+
+/*--------------------------------------------------------------
+3.5 Gallery
+--------------------------------------------------------------*/
+.gallery {
+	margin: 0 auto;
+}
+.gallery .tile {
+	position: relative;
+}
+.gallery .tile img {
+	padding: 0;
+	margin: 0;
+	float: left;
+	display: block;
+}
+.gallery .tile .caption {
+	color: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-top: 44.5%;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	backface-visibility: hidden;
+	-moz-transition: transform 0.3s, opacity 0.3s;
+	-webkit-transition: transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	text-align: center;
+	-webkit-box-shadow: inset 0px 0px 150px rgba(0,0,0,.6);
+	-moz-box-shadow: inset 0px 0px 150px rgba(0,0,0,.6);
+	box-shadow: inset 0px 0px 150px rgba(0,0,0,.6);
+	background-color: rgba(0,0,0,.3);
+	font-size: 24px;
+	font-size: 2.4rem;
+	text-transform: uppercase;
+	font-family: "Open Sans Condensed", sans-serif;
+}
+.gallery .tile .caption:hover {
+	opacity: 1;
+}
+.gallery .tile p.comment {
+	display: none;
+}
+p.comment span {
+	color: #70da7e;
+}
+p.comment span:hover {
+	color: #97daa0;
+	cursor: pointer;
+}
+/*--------------------------------------------------------------
+3.6 Video
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+3.7 Footer
+--------------------------------------------------------------*/
+footer {
+	font-size: 10px;
+	font-size: 1.0rem;
+	text-align: center;
+	margin: 60px auto;
+	max-width: 720px;
+	text-transform: uppercase;
+	border-top: 1px solid #f1f1f1;
+	padding: 24px;
+}
+footer p {
+	opacity: .5;
+	margin: 0;
+}
+footer p:hover {
+	opacity: 1;
+}
+/*--------------------------------------------------------------
+4.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+.center {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+5.0 Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after {
+	content: '';
+	display: table;
+}
+
+.clear:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+6.0 Media
+--------------------------------------------------------------*/
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+7.0 Selection
+--------------------------------------------------------------*/
+::selection {
+    color: #000;
+    background: #ecef00;
+}
+::-moz-selection {
+    color: #000;
+    background: #ecef00;
+}
